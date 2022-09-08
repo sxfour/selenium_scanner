@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from pyfiglet import Figlet
 import time
 
 options = webdriver.ChromeOptions()
@@ -11,8 +10,6 @@ driver = webdriver.Chrome(options=options)
 # Main function to get data with site scanner, this work with selenium basic commands.
 def main_func():
     try:
-        f = Figlet(font='standard')
-        print(f.renderText('Selenium scan'))
         driver.get('https://hackertarget.com/nmap-online-port-scanner/')
         ip = driver.find_element(By.NAME, 'theinput')
         ip.send_keys(input('Set (host or domain) to scan: ')), print('Sending command...')
